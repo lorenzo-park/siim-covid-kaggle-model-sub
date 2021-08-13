@@ -1,0 +1,6 @@
+# @package _global_
+model_name: FasterRCNN
+
+iou_thresholds: 0.5
+skip_box_thr: 0.0001
+score_thresholds: 0.5

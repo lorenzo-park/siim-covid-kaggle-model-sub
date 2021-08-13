@@ -1,0 +1,42 @@
+# Env parameter
+fold: 0 # CV Fold number. One of 0,1,2,3,4.
+seed: 42 # Random seed
+root: /home/lorenzo/kaggle_model/train_code # Project root directory
+dataset_postfix: ""
+data_root: "${root}/data-${img_size}${dataset_postfix}"
+data_root_test: "/kaggle/"
+num_workers: 16
+gpus: 3 # The number of GPUs used for training. One can indicate specific gpu by array. i.e. [0,1]
+load_path: null # UNUSED
+
+defaults:
+  - model: unet_smp
+
+# Training parameter
+batch_size: 8
+epoch: 50
+es_patience: 10 # Early stopping patience
+img_size: 640
+optimizer: adamw # Optimizer type. One of sgd, adam, adamw
+lr: 1e-5
+momentum: 0.9
+album: true # Turn on augmentations. Augmentation function in utils.py
+focal_loss: false
+cv: sgkf # sgkf (Stratified Grouped K Fold), skf (Stratified Grouped K Fold)
+second_train: false # Train with entire data with fixed epoch
+grad_accum: 1
+no_ricord_val: false
+
+# ETC
+mask_type: both # both, lung, box, null
+project: siim-covid-model-cv
+logger: false
+checkpoint_dir: "${root}/pl_output"
+
+lr_finder: false
+
+lr_schedule:
+  name: cosine_annealing_warm_starts # See `get_lr_scheduler` function in utils/etc.py
+  t_0: 5
+  max_epoch: 100
+  warmup_epoch: 3

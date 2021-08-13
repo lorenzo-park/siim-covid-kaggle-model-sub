@@ -1,0 +1,27 @@
+# @package _global_
+model_name: unet_smp_mask_cond
+
+unet_smp:
+  # Efficient net
+  backbone_name: tu-tf_efficientnetv2_m # Backbone model list can be found here https://github.com/qubvel/segmentation_models.pytorch#encoders-
+  model_type: unetplusplus
+  neck_type: "F"
+  gem_pooling: false
+  hidden_dim: 512
+  encoder_weights: imagenet
+  mask_type: "${mask_type}"
+  decoder_blocks: 3
+  decoder_channels: null
+  classes: 2
+
+losses: "cls,seg" # To use segmetnation auxiliary loss together, use "cls,seg"
+lambda_lovasz: 1.5
+lambda_bce: 0.5
+lambda_focal: 0.0
+lambda_dice: 0.0
+
+w_enc: 1.0
+w_seg: 1.0
+w_cls: 1.0
+
+loss_pooling: null

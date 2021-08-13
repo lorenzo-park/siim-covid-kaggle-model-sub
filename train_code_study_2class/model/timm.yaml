@@ -1,0 +1,13 @@
+# @package _global_
+model_name: timm
+
+model_config:
+  backbone_name: swin_large_patch4_window12_384_in22k
+  neck_type: F
+  hidden_dim: 192
+  num_classes: 4
+  pretrained_path: null
+
+alpha: 0.1
+temperature: 2
+distill: False
