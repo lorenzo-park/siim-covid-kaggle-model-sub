@@ -57,7 +57,7 @@ root: /home/lorenzo/kaggle_model/train_code_study_2class # Project root director
 Also, unless you use wandb for logging training metrics/losses, turn off `logger` option to use default build-in logger of pytorch. i.e. `logger=False`
 
 For reproducing all models, please run the following scripts in order, on the right hardware settings. Each hardware settings of each bash script is commented on the top.
-IMPORTANT: All scripts assume the project root path is `/home/lorenzo/kaggle_model/train_code_study_2class`. Please modify all path related variables before you run it indicated by coments in the below.
+**IMPORTANT: All scripts assume the project root path is `/home/lorenzo/kaggle_model/train_code_study_2class`. Please modify all path related variables before you run it indicated below by coments.**
 ```bash
 bash 1.pretraining.bash # Before running this script, update the `data_root` parameters in this file.
 bash 2.unet_training_with_nihpretrained.bash
