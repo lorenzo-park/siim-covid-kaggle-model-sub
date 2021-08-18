@@ -1,5 +1,6 @@
 hydra-core==1.1.0
 pytorch-lightning==1.3.5
+torchmetrics==0.4.1
 test-tube==0.7.5
 lightning-bolts==0.3.4
 wandb==0.10.32

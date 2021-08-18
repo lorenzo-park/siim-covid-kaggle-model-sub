@@ -102,7 +102,7 @@ def run(config):
             verbose=False,
             mode='min'
         ))
-    if config.second_train:
+    if config.second_train or "nih" in config.data_root:
         callbacks.append(ModelCheckpoint(
             dirpath=f"/shared/lorenzo/second_trains_{model_name_wandb}_{config.seed}_{config.img_size}",
             filename=f"{model_name_wandb}-"+"{epoch:02d}-"+f"{config.cv}{config.fold}-"+"{val_loss:.4f}",
@@ -110,7 +110,7 @@ def run(config):
         ))
     if not config.model_name == "FasterRCNN":
         callbacks.append(ModelCheckpoint(
-            dirpath="/home/lorenzo/siim-covid/pl_output",
+            dirpath=f"{config.root}/pl_output",
             filename=f"{model_name_wandb}-"+"{epoch:02d}-"+f"{config.cv}{config.fold}-"+"{val_loss:.4f}",
             monitor="val_loss",
             mode="min"

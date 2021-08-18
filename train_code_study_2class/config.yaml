@@ -1,7 +1,7 @@
 # Env parameter
 fold: 0 # CV Fold number. One of 0,1,2,3,4.
 seed: 42 # Random seed
-root: /home/lorenzo/kaggle_model/train_code # Project root directory
+root: /home/lorenzo/kaggle_model/train_code_study_2class # Project root directory
 dataset_postfix: ""
 data_root: "${root}/data-${img_size}${dataset_postfix}"
 data_root_test: "/kaggle/"

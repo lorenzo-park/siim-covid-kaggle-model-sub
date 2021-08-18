@@ -60,7 +60,10 @@ For reproducing all models, please run the following scripts in order, on the ri
 **IMPORTANT: All scripts assume the project root path is `/home/lorenzo/kaggle_model/train_code_study_2class`. Please modify all path related variables before you run it indicated below by coments.**
 ```bash
 bash 1.pretraining.bash # Before running this script, update the `data_root` parameters in this file.
-bash 2.unet_training_with_nihpretrained.bash
+
+bash 2.unet_training_with_nihpretrained.bash # Before running this script, generate pretrained model weight in `gen_pretrain.ipynb` and update the `unet_smp.pretrain_path` parameter.
+bash 2.unet_training_with_nihpretrained.bash # Before running this script, generate pretrained model weight in `gen_pretrain.ipynb` and update the `model_config.pretrained_path` parameter.
+
 bash 3.unet_training.bash
 bash 4.finetuning_2class.bash
 ```
