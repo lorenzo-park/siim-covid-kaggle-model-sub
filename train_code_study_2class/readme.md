@@ -67,3 +67,6 @@ bash 2.unet_training_with_nihpretrained.bash # Before running this script, gener
 bash 3.unet_training.bash
 bash 4.finetuning_2class.bash
 ```
+
+# Wandb Logs
+Submitted models training info can be found this [wandb link](https://wandb.ai/monet-kaggle/siim-covid-final%20submission?workspace=user-lorenzo-kaggle)
